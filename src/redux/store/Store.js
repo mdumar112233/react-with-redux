@@ -1,2 +1,4 @@
+import { createStore } from "redux";
+import cartReducer from "../reducers/CartReducer";
 
-const store = createStoreHook
+export const store = createStore(cartReducer);
