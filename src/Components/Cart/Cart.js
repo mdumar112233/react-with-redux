@@ -4,12 +4,13 @@ import { removeFromCart } from '../../redux/actions/CartAction';
 
 const Cart = (props) => {
     const {cart, removeFromCart} = props;
+    console.log(cart);
     return (
         <div>
             <h3>This is cart</h3>
             <ul>
                 {
-                    cart.map(id => <li>{id} <button onClick={()=> removeFromCart(id)}>x</button></li>)
+                    cart.map(pd => <li kay={pd.cartId}>{pd.productId} <button onClick={()=> removeFromCart(pd.cartId)}>x</button></li>)
                 }
             </ul>
         </div>
