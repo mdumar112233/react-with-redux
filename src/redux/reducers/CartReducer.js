@@ -1,7 +1,8 @@
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../actions/CartAction";
 
 const initialState = {
-    cart: []
+    cart: [],
+    products: []
 }
 
 
@@ -14,7 +15,7 @@ const cartReducer = (state = initialState, action) =>{
             break;
         case REMOVE_FROM_CART:
             const id = action.id;
-            const remainingCart = state.cart.filter(item => item.id !== id);
+            const remainingCart = state.cart.filter(item => item !== id);
             console.log(remainingCart);
             return {cart: remainingCart};
         default:
